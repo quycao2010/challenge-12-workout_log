@@ -1,0 +1,37 @@
+<%= form_for @workout do |f| %>
+    <% if @workout.errors.any? %>
+        <div id="error_explanation" class="container">
+            <ul class="alert alert-warning" style="list-style:none;">
+                <% @workout.errors.full_messages.each do |message| %>
+                    <li class="text-center"><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="form-group">
+                    <%= f.label :"Date" %><br>
+                    <%= f.date_field :data, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :"What area đid you workout" %><br>
+                    <%= f.text_field :workout, class: "form-control"  %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :"How are you feeling?" %><br>
+                    <%= f.text_field :mood, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :"How long was the workout" %><br>
+                    <%= f.text_field :length, class: "form-control"  %><br>
+                </div>
+                <div class="form-group">
+                    <%= f.submit "Create",class: "btn btn-info" %>
+                    <%= link_to 'Back', root_path, class: "btn" %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

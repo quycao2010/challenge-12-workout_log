@@ -1,0 +1,7 @@
+<h1 class="text-center">Workout Detail</h1>
+<h2><%= @workout.workout %></h2>
+<p><%= @workout.mood %></p>
+<p><%= @workout.length %></p>
+<%= link_to 'Edit', edit_workout_path(@workout) %>
+<%= link_to 'Delete', workout_path(@workout), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to 'Back', root_path %>
