@@ -13,7 +13,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="form-group">
                     <%= f.label :"Date" %><br>
-                    <%= f.date_field :data, class: "form-control" %>
+                    <%= f.date_field :data, data:{ provide:'datepicker' }, class: "form-control" %>
                 </div>
                 <div class="form-group">
                     <%= f.label :"What area đid you workout" %><br>

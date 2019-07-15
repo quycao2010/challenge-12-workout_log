@@ -1,5 +1,7 @@
-<h1>This is homepage</h1>
-<% @workouts.each do |workout| %>
-    <h2><%= link_to workout.data, workout_path(workout) %></h2>
-    <h3><%= workout.workout %></h3>
-<% end %>
+<div class="index_workouts">
+    <h1>Workout list</h1>
+    <% @workouts.each do |workout| %>
+        <h2><%= link_to workout.data, workout_path(workout) %></h2>
+        <h3><%= workout.workout %></h3>
+    <% end %>
+</div>

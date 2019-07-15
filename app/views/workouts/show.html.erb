@@ -1,7 +1,18 @@
 <h1 class="text-center">Workout Detail</h1>
-<h2><%= @workout.workout %></h2>
-<p><%= @workout.mood %></p>
-<p><%= @workout.length %></p>
-<%= link_to 'Edit', edit_workout_path(@workout) %>
-<%= link_to 'Delete', workout_path(@workout), method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to 'Back', root_path %>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 style="color:white;"><%= @workout.workout %></h2>
+            <p><%= @workout.mood %></p>
+            <p><%= @workout.length %></p>
+            <%= link_to 'Edit', edit_workout_path(@workout),class: "btn btn-info" %>
+            <%= link_to 'Delete', workout_path(@workout), method: :delete, data: {confirm: "Are you sure?"},class: "btn btn-danger" %>
+            <%= link_to 'Back', root_path,class: "btn btn-info" %>
+            
+            <h2>Exercises</h2>
+            <%= render @workout.exercises %>
+            <h3>Add an exercise</h3>
+        </div>
+    </div>
+</div>
+<%= render "exercises/form" %>
